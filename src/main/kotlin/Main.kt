@@ -41,9 +41,10 @@ fun main() {
                             continue
                         }
                         println("Введите текс заметки")
-                        val body = scanner.nextLine()
-                        if (body.isEmpty()) {
-                            println("Вы не ввели текст. Ну и ладно =(")
+                        var body = scanner.nextLine()
+                        while (body.isEmpty()) {
+                            println("Вы не ввели текст. Введите хоть что нибудь:")
+                            body = scanner.nextLine()
                         }
                         archiveList[selectedArchive].notes.add(Note(name, body))
                         menuState = MenuState.NOTES
